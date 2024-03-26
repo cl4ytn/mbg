@@ -1,0 +1,259 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
+    line-height: 1.2;
+}
+
+:root {
+    --card-width: 250px;
+    --card_border_radius: 16px;
+    --row_increment: 10px;
+    --card_small: 26;
+    --card_medium: 33;
+    --card_large: 45;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f2e9e4;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Styles pour la barre de navigation */
+.header {
+    position: fixed;
+    top: 0;
+    background-color: #f2e9e4;
+    width: 100%;
+    height: 100px;
+    padding: 1.3rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.add-shadow {
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    padding-right: 65px;
+}
+
+.navbar a {
+    padding-left: 15px;
+    font-size: 35px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #000;
+}
+
+nav{
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    width: 250px;
+}
+
+.bottom-navigation {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    width: 250px;
+}
+
+.navigation{
+    position: fixed;
+    right: -500px;
+    top: 0;
+    width: 350px;
+    height: 100%;
+    background-color: #dad2cd;
+    transition: .5s;
+}
+
+.navigation ul li{
+    color: #000;
+    text-align: left;
+    text-transform: uppercase;
+    list-style-type: none;
+    font-size: 1.5em;
+    padding: 20px 30px;
+}
+
+.bottom-navigation ul li {
+    color: #000;
+    text-align: left;
+    text-transform: uppercase;
+    list-style-type: none;
+    font-size: 1.5em;
+    padding: 5px 30px;
+}
+
+.hamburger, .bar{
+    position: fixed;
+}
+
+.hamburger{
+    display: block;
+    top: 50px;
+    right: 50px;
+    width: 30px;
+    height: 30px;
+    transform: translateY(-50%);
+    border: 0;
+    background: 0 0;
+}
+
+.bar{
+    top: 3px;
+    background: #000;
+    width: 100%;
+    height: 4px;
+    transition: all .3s ease-in;
+}
+
+#bar2{
+    top: 11px;
+}
+
+#bar3{
+    top: 19px;
+}
+
+.navigation.active{
+    right: 0;
+    top: 0;
+}
+
+.hamburger.open #bar1{
+    transform: rotate(45deg) translate(6px, 5px);
+}
+
+.hamburger.open #bar2{
+    background-color: transparent;
+}
+
+.hamburger.open #bar3{
+    transform: rotate(-45deg) translate(6px, -5px);
+}
+
+body img {
+    width: 189px;
+    height: 134px;
+}
+
+.pin-container {
+    margin: 0;
+    padding-top: 100px;
+    width: 80vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--card-width));
+    grid-auto-rows: var(--row_increment);
+    justify-content: center;
+}
+
+.card {
+    padding: 0px;
+    margin: 15px 10px;
+    border-radius: var(--card_border_radius);
+
+    background-color: #333333;
+}
+
+.card_small {
+    grid-row-end: span var(--card_small);
+}
+
+.card_medium {
+    grid-row-end: span var(--card_medium);
+}
+
+.card_large {
+    grid-row-end: span var(--card_large);
+}
+
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: auto;
+    background-color: #dad2cd;
+    padding: 60px 10%;
+}
+
+.border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 10px;
+    width: 100%;
+    background-color: black;
+}
+
+ul{
+    list-style: none;
+}
+
+.footer-col{
+    width: 25%;
+}
+
+.footer-col img {
+    position: relative;
+    bottom: 30px;
+    height: 86px;
+    width: 121px;
+}
+
+.footer-col h4{
+    position: relative;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 22px;
+    color: #000000;
+}
+
+ul li:not(:last-child){
+    margin-bottom: 8px;
+}
+
+ul li a{
+    display: block;
+    font-size: 19px;
+    color: #000000;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+ul li a:hover{
+    color: #000000;
+    padding-left: 2px;
+}
+
+@media(max-width: 740px){
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .footer-col h4::before{
+        all: unset;
+    }
+}
+
+@media(max-width: 555px){
+    .footer-col{
+        width: 100%;
+    }
+}
