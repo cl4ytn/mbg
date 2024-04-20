@@ -153,30 +153,46 @@ body img {
 
 main {
   margin-top: 150px;
+  margin-bottom: 50px;
   padding: 0 40px 0 120px;
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-areas:
     "event-sidebar event-header"
     ". event-summary";
-  grid-gap: 20px;
+  grid-column-gap: 20px;
+  grid-row-gap: 60px;
+}
 
-  .event-sidebar {
-    grid-area: event-sidebar;
+.event-sidebar {
+  grid-area: event-sidebar;
+}
+
+.event-header {
+  grid-area: event-header;
+  width: 80%;
+  p:nth-child(3) {
+    margin-top: 10px;
   }
-  .event-header {
-    grid-area: event-header;
-    width: 80%;
-    p:nth-child(3) {
-      margin-top: 10px;
-    }
-    p:nth-child(4) {
-      margin-top: 40px;
-      text-wrap: balance;
-    }
+  p:nth-child(4) {
+    margin-top: 40px;
+    text-wrap: balance;
   }
-  .event-summary {
-    grid-area: event-summary;
+}
+.event-summary {
+  grid-area: event-summary;
+
+  .documents {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+  .picture {
+    background-color: #dad2cd;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
   }
 }
 
