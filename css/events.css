@@ -289,7 +289,8 @@ ul li a:hover {
     grid-template-areas:
       "event-header"
       "event-summary"
-      "event-sidebar";
+      "event-sidebar"
+      "event-tenants";
       place-items: center;
   }
 }
